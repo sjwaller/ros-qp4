@@ -1,0 +1,53 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"back_left_hip_link" [label="back_left_hip_link"];
+"back_left_femur_link" [label="back_left_femur_link"];
+"back_left_tibia_link" [label="back_left_tibia_link"];
+"back_left_foot_link" [label="back_left_foot_link"];
+"back_right_hip_link" [label="back_right_hip_link"];
+"back_right_femur_link" [label="back_right_femur_link"];
+"back_right_tibia_link" [label="back_right_tibia_link"];
+"back_right_foot_link" [label="back_right_foot_link"];
+"front_left_hip_link" [label="front_left_hip_link"];
+"front_left_femur_link" [label="front_left_femur_link"];
+"front_left_tibia_link" [label="front_left_tibia_link"];
+"front_left_foot_link" [label="front_left_foot_link"];
+"front_right_hip_link" [label="front_right_hip_link"];
+"front_right_femur_link" [label="front_right_femur_link"];
+"front_right_tibia_link" [label="front_right_tibia_link"];
+"front_right_foot_link" [label="front_right_foot_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "base_to_back_left_hip" [label="xyz: -0.0398 0.0444 -0.0315 \nrpy: 0 -0 0"]
+"base_to_back_left_hip" -> "back_left_hip_link"
+"back_left_hip_link" -> "back_left_hip_to_back_left_femur" [label="xyz: -0.0192 0.0005 -0.029 \nrpy: -1.5708 0 0"]
+"back_left_hip_to_back_left_femur" -> "back_left_femur_link"
+"back_left_femur_link" -> "back_left_femur_to_back_left_tibia" [label="xyz: 0.019 0.0572 0 \nrpy: 1.5708 -0 0"]
+"back_left_femur_to_back_left_tibia" -> "back_left_tibia_link"
+"back_left_tibia_link" -> "back_left_tibia_to_back_left_foot" [label="xyz: -0.0185 -0.0002 -0.077 \nrpy: 0 -0 0"]
+"back_left_tibia_to_back_left_foot" -> "back_left_foot_link"
+"base_link" -> "base_to_back_right_hip" [label="xyz: 0.0398 0.0444 -0.0315 \nrpy: 0 -0 0"]
+"base_to_back_right_hip" -> "back_right_hip_link"
+"back_right_hip_link" -> "back_right_hip_to_back_right_femur" [label="xyz: 0.0192 0.0005 -0.029 \nrpy: -1.5708 0 0"]
+"back_right_hip_to_back_right_femur" -> "back_right_femur_link"
+"back_right_femur_link" -> "back_right_femur_to_back_right_tibia" [label="xyz: -0.019 0.0572 0 \nrpy: 1.5708 -0 0"]
+"back_right_femur_to_back_right_tibia" -> "back_right_tibia_link"
+"back_right_tibia_link" -> "back_right_tibia_to_back_right_foot" [label="xyz: 0.0185 -0.0002 -0.077 \nrpy: 0 -0 0"]
+"back_right_tibia_to_back_right_foot" -> "back_right_foot_link"
+"base_link" -> "base_to_front_left_hip" [label="xyz: -0.0398 0.2984 -0.0315 \nrpy: 0 -0 0"]
+"base_to_front_left_hip" -> "front_left_hip_link"
+"front_left_hip_link" -> "front_left_hip_to_front_left_femur" [label="xyz: -0.0192 0.0005 -0.029 \nrpy: -1.5708 0 0"]
+"front_left_hip_to_front_left_femur" -> "front_left_femur_link"
+"front_left_femur_link" -> "front_left_femur_to_front_left_tibia" [label="xyz: 0.019 0.0572 0 \nrpy: 1.5708 -0 0"]
+"front_left_femur_to_front_left_tibia" -> "front_left_tibia_link"
+"front_left_tibia_link" -> "front_left_tibia_to_front_left_foot" [label="xyz: -0.0185 0.0002 -0.077 \nrpy: 0 -0 0"]
+"front_left_tibia_to_front_left_foot" -> "front_left_foot_link"
+"base_link" -> "base_to_front_right_hip" [label="xyz: 0.0398 0.2984 -0.0315 \nrpy: 0 -0 0"]
+"base_to_front_right_hip" -> "front_right_hip_link"
+"front_right_hip_link" -> "front_right_hip_to_front_right_femur" [label="xyz: 0.0192 0.0005 -0.029 \nrpy: -1.5708 0 0"]
+"front_right_hip_to_front_right_femur" -> "front_right_femur_link"
+"front_right_femur_link" -> "front_right_femur_to_front_right_tibia" [label="xyz: -0.019 0.0572 0 \nrpy: 1.5708 -0 0"]
+"front_right_femur_to_front_right_tibia" -> "front_right_tibia_link"
+"front_right_tibia_link" -> "front_right_tibia_to_front_right_foot" [label="xyz: 0.0185 0.0002 -0.077 \nrpy: 0 -0 0"]
+"front_right_tibia_to_front_right_foot" -> "front_right_foot_link"
+}

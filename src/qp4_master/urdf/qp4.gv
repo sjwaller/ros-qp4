@@ -1,0 +1,5 @@
+digraph G {
+node [shape=box];
+"torso_link" [label="torso_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+}

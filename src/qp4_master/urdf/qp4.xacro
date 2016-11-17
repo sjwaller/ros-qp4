@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="qp4">
+
+    <xacro:property name="cad_dir" value="file://$(find qp4_master)/../../assets/cad"/>
+    
+	<!-- Typically, STL/DAE model units are in mm, but RViz units are in m, hence models must be scaled down by 1000. -->
+    <xacro:macro name="default_geometry" params="cad_file extension:=dae">
+        <geometry>
+           <mesh filename="${cad_dir}/${cad_file}.${extension}" scale="0.001 0.001 0.001"/> -->
+        </geometry>
+    </xacro:macro>
+
+    <xacro:macro name="z_rot">
+        <axis xyz="0 0 1"/>
+    </xacro:macro>
+
+    <xacro:include filename="$(find qp4_master)/urdf/qp4_materials.xacro"/>
+
+    <xacro:include filename="$(find qp4_master)/urdf/qp4_parts.xacro"/>
+
+</robot>

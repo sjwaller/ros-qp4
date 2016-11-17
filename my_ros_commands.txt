@@ -1,0 +1,6 @@
+# Using ROS Kinetic
+
+roscd qp4_master
+./urdf/generate_urdf_and_vis.sh
+roslaunch qp4_master display.launch model:=urdf/qp4.urdf
+
