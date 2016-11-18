@@ -28,6 +28,172 @@
   <material name="yellow">
     <color rgba="0.8 0.8 0.0 1.0"/>
   </material>
+  <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>/</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+  <transmission name="back_right_hip_swing_joint_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="back_right_hip_swing_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="back_right_hip_swing_joint_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="back_left_hip_swing_joint_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="back_left_hip_swing_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="back_left_hip_swing_joint_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="front_right_hip_swing_joint_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_right_hip_swing_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="front_right_hip_swing_joint_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="front_left_hip_swing_joint_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_left_hip_swing_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="front_left_hip_swing_joint_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="back_right_hip_lateral_joint_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="back_right_hip_lateral_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="back_right_hip_lateral_joint_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="back_left_hip_lateral_joint_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="back_left_hip_lateral_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="back_left_hip_lateral_joint_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="front_right_hip_lateral_joint_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_right_hip_lateral_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="front_right_hip_lateral_joint_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="front_left_hip_lateral_joint_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_left_hip_lateral_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="front_left_hip_lateral_joint_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="back_right_knee_joint_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="back_right_knee_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="back_right_knee_joint_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="back_left_knee_joint_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="back_left_knee_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="back_left_knee_joint_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="front_right_knee_joint_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_right_knee_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="front_right_knee_joint_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="front_left_knee_joint_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_left_knee_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="front_left_knee_joint_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="back_right_ankle_joint_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="back_right_ankle_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="back_right_ankle_joint_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="back_left_ankle_joint_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="back_left_ankle_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="back_left_ankle_joint_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="front_right_ankle_joint_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_right_ankle_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="front_right_ankle_joint_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="front_left_ankle_joint_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_left_ankle_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="front_left_ankle_joint_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <!--
 		0.003175 = 0.125"
 		0.00635 = 0.25"
@@ -39,7 +205,7 @@
 		0.3048 = 12" 
 	-->
   <!-- Torso -->
-  <link name="base_link">
+  <link name="torso_link">
     <visual>
       <geometry>
         <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-512.dae" scale="0.001 0.001 0.001"/>
@@ -80,7 +246,53 @@
       </geometry>
       <origin rpy="0 0 -1.57079632679" xyz="0.0125 0.2794 -0.0127"/>
     </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-512.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="1.57079632679 0 0"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-11.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="0 0 1.57079632679" xyz="-0.0125 0.0254 -0.0127"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-11.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="0 0 -1.57079632679" xyz="0.0125 0.0254 -0.0127"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-11.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="0 0 1.57079632679" xyz="-0.0125 0.2794 -0.0127"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-11.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="0 0 -1.57079632679" xyz="0.0125 0.2794 -0.0127"/>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
   </link>
+  <!-- Legs -->
   <!-- Hip -->
   <link name="back_right_hip_link">
     <visual>
@@ -115,11 +327,49 @@
       </geometry>
       <origin rpy="1.57079632679 1.57079632679 1.57079632679" xyz="0 -0.0098 -0.029"/>
     </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/hs-645-mg.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="0 -1.57079632679 1.57079632679" xyz="0.01 0 0"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-04.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="1.57079632679 0 3.14159265359" xyz="0.01 -0.0127 -0.0145"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-04.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="-1.57079632679 0 1.57079632679" xyz="0.0129 -0.0098 -0.0145"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/hs-645-mg.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="1.57079632679 1.57079632679 1.57079632679" xyz="0 -0.0098 -0.029"/>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
   </link>
-  <joint name="base_to_back_right_hip" type="fixed">
-    <parent link="base_link"/>
+  <joint name="back_right_hip_swing_joint" type="revolute">
+    <parent link="torso_link"/>
     <child link="back_right_hip_link"/>
     <origin xyz="0.0398 0.0444 -0.0315"/>
+    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1.0"/>
   </joint>
   <!-- Femur -->
   <link name="back_right_femur_link">
@@ -139,11 +389,33 @@
       </geometry>
       <origin rpy="3.14159265359 0 0" xyz="0 0.0287 0"/>
     </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-09-black.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0.0287 0"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-09-black.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="3.14159265359 0 0" xyz="0 0.0287 0"/>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
   </link>
-  <joint name="back_right_hip_to_back_right_femur" type="fixed">
+  <joint name="back_right_hip_lateral_joint" type="revolute">
     <parent link="back_right_hip_link"/>
     <child link="back_right_femur_link"/>
     <origin rpy="-1.57079632679 0 0" xyz="0.0192 0.0005 -0.0290"/>
+    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1.0"/>
   </joint>
   <!-- Tibia -->
   <link name="back_right_tibia_link">
@@ -171,11 +443,41 @@
       </geometry>
       <origin rpy="-1.57079632679 0 -1.57079632679" xyz="0.0 0 -0.067"/>
     </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-15-black.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="0 -1.57079632679 0 " xyz="-0.0043 -0.01422 -0.0386"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/hs-645-mg.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="1.57079632679 0 1.57079632679" xyz="0.0 0 -0.01"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/hs-645-mg.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="-1.57079632679 0 -1.57079632679" xyz="0.0 0 -0.067"/>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
   </link>
-  <joint name="back_right_femur_to_back_right_tibia" type="fixed">
+  <joint name="back_right_knee_joint" type="revolute">
     <parent link="back_right_femur_link"/>
     <child link="back_right_tibia_link"/>
     <origin rpy="1.57079632679 0 0" xyz="-0.019 0.0572 0"/>
+    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1.0"/>
   </joint>
   <!-- Foot -->
   <link name="back_right_foot_link">
@@ -187,11 +489,25 @@
       </geometry>
       <origin rpy="1.57079632679 0 3.14159265359" xyz="0 0.0185 -0.0272"/>
     </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-11.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="1.57079632679 0 3.14159265359" xyz="0 0.0185 -0.0272"/>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
   </link>
-  <joint name="back_right_tibia_to_back_right_foot" type="fixed">
+  <joint name="back_right_ankle_joint" type="revolute">
     <parent link="back_right_tibia_link"/>
     <child link="back_right_foot_link"/>
     <origin rpy="0 0 0" xyz="0.0185 -0.0002 -0.077"/>
+    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1.0"/>
   </joint>
   <!-- Hip -->
   <link name="back_left_hip_link">
@@ -227,11 +543,49 @@
       </geometry>
       <origin rpy="1.57079632679 -1.57079632679 -1.57079632679" xyz="0 -0.0098 -0.029"/>
     </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/hs-645-mg.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="0 1.57079632679 -1.57079632679" xyz="-0.01 0 0"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-04.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="1.57079632679 0 -3.14159265359" xyz="-0.01 -0.0127 -0.0145"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-04.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="-1.57079632679 0 -1.57079632679" xyz="-0.0129 -0.0098 -0.0145"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/hs-645-mg.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="1.57079632679 -1.57079632679 -1.57079632679" xyz="0 -0.0098 -0.029"/>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
   </link>
-  <joint name="base_to_back_left_hip" type="fixed">
-    <parent link="base_link"/>
+  <joint name="back_left_hip_swing_joint" type="revolute">
+    <parent link="torso_link"/>
     <child link="back_left_hip_link"/>
     <origin xyz="-0.0398 0.0444 -0.0315"/>
+    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1.0"/>
   </joint>
   <!-- Femur -->
   <link name="back_left_femur_link">
@@ -251,11 +605,33 @@
       </geometry>
       <origin rpy="-3.14159265359 0 0" xyz="0 0.0287 0"/>
     </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-09-black.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0.0287 0"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-09-black.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="-3.14159265359 0 0" xyz="0 0.0287 0"/>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
   </link>
-  <joint name="back_left_hip_to_back_left_femur" type="fixed">
+  <joint name="back_left_hip_lateral_joint" type="revolute">
     <parent link="back_left_hip_link"/>
     <child link="back_left_femur_link"/>
     <origin rpy="-1.57079632679 0 0" xyz="-0.0192 0.0005 -0.0290"/>
+    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1.0"/>
   </joint>
   <!-- Tibia -->
   <link name="back_left_tibia_link">
@@ -283,11 +659,41 @@
       </geometry>
       <origin rpy="-1.57079632679 0 1.57079632679" xyz="0.0 0 -0.067"/>
     </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-15-black.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="0 1.57079632679 0 " xyz="0.0043 -0.01422 -0.0386"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/hs-645-mg.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="1.57079632679 0 -1.57079632679" xyz="0.0 0 -0.01"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/hs-645-mg.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="-1.57079632679 0 1.57079632679" xyz="0.0 0 -0.067"/>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
   </link>
-  <joint name="back_left_femur_to_back_left_tibia" type="fixed">
+  <joint name="back_left_knee_joint" type="revolute">
     <parent link="back_left_femur_link"/>
     <child link="back_left_tibia_link"/>
     <origin rpy="1.57079632679 0 0" xyz="0.019 0.0572 0"/>
+    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1.0"/>
   </joint>
   <!-- Foot -->
   <link name="back_left_foot_link">
@@ -299,11 +705,25 @@
       </geometry>
       <origin rpy="1.57079632679 0 3.14159265359" xyz="0 0.0185 -0.0272"/>
     </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-11.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="1.57079632679 0 3.14159265359" xyz="0 0.0185 -0.0272"/>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
   </link>
-  <joint name="back_left_tibia_to_back_left_foot" type="fixed">
+  <joint name="back_left_ankle_joint" type="revolute">
     <parent link="back_left_tibia_link"/>
     <child link="back_left_foot_link"/>
     <origin rpy="0 0 0" xyz="-0.0185 -0.0002 -0.077"/>
+    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1.0"/>
   </joint>
   <!-- Hip -->
   <link name="front_right_hip_link">
@@ -339,11 +759,49 @@
       </geometry>
       <origin rpy="1.57079632679 1.57079632679 1.57079632679" xyz="0 -0.0098 -0.029"/>
     </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/hs-645-mg.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="0 -1.57079632679 1.57079632679" xyz="0.01 0 0"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-04.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="1.57079632679 0 3.14159265359" xyz="0.01 -0.0127 -0.0145"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-04.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="-1.57079632679 0 1.57079632679" xyz="0.0129 -0.0098 -0.0145"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/hs-645-mg.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="1.57079632679 1.57079632679 1.57079632679" xyz="0 -0.0098 -0.029"/>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
   </link>
-  <joint name="base_to_front_right_hip" type="fixed">
-    <parent link="base_link"/>
+  <joint name="front_right_hip_swing_joint" type="revolute">
+    <parent link="torso_link"/>
     <child link="front_right_hip_link"/>
     <origin xyz="0.0398 0.2984 -0.0315"/>
+    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1.0"/>
   </joint>
   <!-- Femur -->
   <link name="front_right_femur_link">
@@ -363,11 +821,33 @@
       </geometry>
       <origin rpy="3.14159265359 0 0" xyz="0 0.0287 0"/>
     </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-09-black.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0.0287 0"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-09-black.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="3.14159265359 0 0" xyz="0 0.0287 0"/>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
   </link>
-  <joint name="front_right_hip_to_front_right_femur" type="fixed">
+  <joint name="front_right_hip_lateral_joint" type="revolute">
     <parent link="front_right_hip_link"/>
     <child link="front_right_femur_link"/>
     <origin rpy="-1.57079632679 0 0" xyz="0.0192 0.0005 -0.0290"/>
+    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1.0"/>
   </joint>
   <!-- Tibia -->
   <link name="front_right_tibia_link">
@@ -395,11 +875,41 @@
       </geometry>
       <origin rpy="-1.57079632679 0 -1.57079632679" xyz="0.0 0 -0.067"/>
     </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-15-black.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="0 -1.57079632679 0 " xyz="-0.0043 -0.01422 -0.0386"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/hs-645-mg.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="1.57079632679 0 1.57079632679" xyz="0.0 0 -0.01"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/hs-645-mg.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="-1.57079632679 0 -1.57079632679" xyz="0.0 0 -0.067"/>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
   </link>
-  <joint name="front_right_femur_to_front_right_tibia" type="fixed">
+  <joint name="front_right_knee_joint" type="revolute">
     <parent link="front_right_femur_link"/>
     <child link="front_right_tibia_link"/>
     <origin rpy="1.57079632679 0 0" xyz="-0.019 0.0572 0"/>
+    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1.0"/>
   </joint>
   <!-- Foot -->
   <link name="front_right_foot_link">
@@ -411,11 +921,25 @@
       </geometry>
       <origin rpy="1.57079632679 0 3.14159265359" xyz="0 0.0185 -0.0272"/>
     </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-11.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="1.57079632679 0 3.14159265359" xyz="0 0.0185 -0.0272"/>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
   </link>
-  <joint name="front_right_tibia_to_front_right_foot" type="fixed">
+  <joint name="front_right_ankle_joint" type="revolute">
     <parent link="front_right_tibia_link"/>
     <child link="front_right_foot_link"/>
     <origin rpy="0 0 0" xyz="0.0185 0.0002 -0.077"/>
+    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1.0"/>
   </joint>
   <!-- Hip -->
   <link name="front_left_hip_link">
@@ -451,11 +975,49 @@
       </geometry>
       <origin rpy="1.57079632679 -1.57079632679 -1.57079632679" xyz="0 -0.0098 -0.029"/>
     </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/hs-645-mg.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="0 1.57079632679 -1.57079632679" xyz="-0.01 0 0"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-04.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="1.57079632679 0 -3.14159265359" xyz="-0.01 -0.0127 -0.0145"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-04.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="-1.57079632679 0 -1.57079632679" xyz="-0.0129 -0.0098 -0.0145"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/hs-645-mg.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="1.57079632679 -1.57079632679 -1.57079632679" xyz="0 -0.0098 -0.029"/>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
   </link>
-  <joint name="base_to_front_left_hip" type="fixed">
-    <parent link="base_link"/>
+  <joint name="front_left_hip_swing_joint" type="revolute">
+    <parent link="torso_link"/>
     <child link="front_left_hip_link"/>
     <origin xyz="-0.0398 0.2984 -0.0315"/>
+    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1.0"/>
   </joint>
   <!-- Femur -->
   <link name="front_left_femur_link">
@@ -475,11 +1037,33 @@
       </geometry>
       <origin rpy="-3.14159265359 0 0" xyz="0 0.0287 0"/>
     </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-09-black.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0.0287 0"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-09-black.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="-3.14159265359 0 0" xyz="0 0.0287 0"/>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
   </link>
-  <joint name="front_left_hip_to_front_left_femur" type="fixed">
+  <joint name="front_left_hip_lateral_joint" type="revolute">
     <parent link="front_left_hip_link"/>
     <child link="front_left_femur_link"/>
     <origin rpy="-1.57079632679 0 0" xyz="-0.0192 0.0005 -0.0290"/>
+    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1.0"/>
   </joint>
   <!-- Tibia -->
   <link name="front_left_tibia_link">
@@ -507,11 +1091,41 @@
       </geometry>
       <origin rpy="-1.57079632679 0 1.57079632679" xyz="0.0 0 -0.067"/>
     </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-15-black.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="0 1.57079632679 0 " xyz="0.0043 -0.01422 -0.0386"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/hs-645-mg.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="1.57079632679 0 -1.57079632679" xyz="0.0 0 -0.01"/>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/hs-645-mg.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="-1.57079632679 0 1.57079632679" xyz="0.0 0 -0.067"/>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
   </link>
-  <joint name="front_left_femur_to_front_left_tibia" type="fixed">
+  <joint name="front_left_knee_joint" type="revolute">
     <parent link="front_left_femur_link"/>
     <child link="front_left_tibia_link"/>
     <origin rpy="1.57079632679 0 0" xyz="0.019 0.0572 0"/>
+    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1.0"/>
   </joint>
   <!-- Foot -->
   <link name="front_left_foot_link">
@@ -523,10 +1137,32 @@
       </geometry>
       <origin rpy="1.57079632679 0 3.14159265359" xyz="0 0.0185 -0.0272"/>
     </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file:///home/stewart/Robotics/ros-qp4/src/qp4_master/../../assets/cad/asb-11.dae" scale="0.001 0.001 0.001"/>
+         --&gt;
+        
+      </geometry>
+      <origin rpy="1.57079632679 0 3.14159265359" xyz="0 0.0185 -0.0272"/>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
   </link>
-  <joint name="front_left_tibia_to_front_left_foot" type="fixed">
+  <joint name="front_left_ankle_joint" type="revolute">
     <parent link="front_left_tibia_link"/>
     <child link="front_left_foot_link"/>
     <origin rpy="0 0 0" xyz="-0.0185 0.0002 -0.077"/>
+    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1.0"/>
   </joint>
+  <!-- Used for fixing robot to Gazebo 'base_link' 
+	  <link name="world"/>
+
+	  <joint name="fixed" type="fixed">
+		<parent link="world"/>
+		<child link="torso_link"/>
+	  </joint>
+	-->
 </robot>

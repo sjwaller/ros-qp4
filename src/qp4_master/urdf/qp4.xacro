@@ -15,7 +15,7 @@
     </xacro:macro>
 
     <xacro:include filename="$(find qp4_master)/urdf/qp4_materials.xacro"/>
-
+    <xacro:include filename="$(find qp4_master)/urdf/qp4_gazebo.xacro"/>
     <xacro:include filename="$(find qp4_master)/urdf/qp4_parts.xacro"/>
 
 </robot>

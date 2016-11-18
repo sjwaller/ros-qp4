@@ -14,8 +14,8 @@
 	
     <!-- Torso -->
 
-    <link name="base_link">
-	 <visual>
+    <link name="torso_link">
+		<visual>
             <xacro:default_geometry cad_file="asb-512"/>
             <origin rpy="${pi/2} 0 0"/>
 		</visual>
@@ -35,7 +35,36 @@
             <xacro:default_geometry cad_file="asb-11"/>
             <origin xyz="0.0125 0.2794 -0.0127" rpy="0 0 -${pi/2}"/>
 	   </visual>
+
+	 	<collision>
+            <xacro:default_geometry cad_file="asb-512"/>
+            <origin rpy="${pi/2} 0 0"/>
+		</collision>
+        <collision>
+            <xacro:default_geometry cad_file="asb-11"/>
+            <origin xyz="-0.0125 0.0254 -0.0127" rpy="0 0 ${pi/2}"/>
+	   </collision>
+        <collision>
+            <xacro:default_geometry cad_file="asb-11"/>
+            <origin xyz="0.0125 0.0254 -0.0127" rpy="0 0 -${pi/2}"/>
+	   </collision>
+        <collision>
+            <xacro:default_geometry cad_file="asb-11"/>
+            <origin xyz="-0.0125 0.2794 -0.0127" rpy="0 0 ${pi/2}"/>
+	   </collision>
+        <collision>
+            <xacro:default_geometry cad_file="asb-11"/>
+            <origin xyz="0.0125 0.2794 -0.0127" rpy="0 0 -${pi/2}"/>
+	   </collision>
+
+        <inertial>
+          <origin xyz="0 0 0"/>
+          <mass value="1.0"/>
+          <inertia  ixx="0.001" ixy="0.0"  ixz="0.0"  iyy="0.001"  iyz="0.0"  izz="0.001"/>
+        </inertial>
 	</link>
+
+	<!-- Legs -->
 
 	<xacro:macro name="leg" params="prefix reflectx reflecty">
 		<!-- Hip -->
@@ -56,12 +85,36 @@
 		        <xacro:default_geometry cad_file="hs-645-mg"/>
 		        <origin xyz="0 -0.0098 -0.029" rpy="${pi/2} ${reflectx*(pi/2)} ${reflectx*(pi/2)}"/>
 			</visual>
+
+	 		<collision>
+		        <xacro:default_geometry cad_file="hs-645-mg"/>
+		        <origin xyz="${reflectx*(0.01)} 0 0" rpy="0 ${reflectx*(-(pi/2))} ${reflectx*(pi/2)}"/>
+			</collision>
+			 <collision>
+		        <xacro:default_geometry cad_file="asb-04"/>
+		        <origin xyz="${reflectx*(0.01)} -0.0127 -0.0145" rpy="${pi/2} 0 ${reflectx*(pi)}"/>
+			</collision>
+			<collision>
+		        <xacro:default_geometry cad_file="asb-04"/>
+		        <origin xyz="${reflectx*(0.0129)} -0.0098 -0.0145" rpy="-${pi/2} 0 ${reflectx*(pi/2)}"/>
+			</collision>  
+		    <collision>
+		        <xacro:default_geometry cad_file="hs-645-mg"/>
+		        <origin xyz="0 -0.0098 -0.029" rpy="${pi/2} ${reflectx*(pi/2)} ${reflectx*(pi/2)}"/>
+			</collision>
+
+		    <inertial>
+		      <origin xyz="0 0 0"/>
+		      <mass value="1.0"/>
+		      <inertia  ixx="0.001" ixy="0.0"  ixz="0.0"  iyy="0.001"  iyz="0.0"  izz="0.001"/>
+		    </inertial>
 		</link>
 
-	  	<joint name="base_to_${prefix}_hip" type="fixed">
-			<parent link="base_link"/>
+	  	<joint name="${prefix}_hip_swing_joint" type="revolute">
+			<parent link="torso_link"/>
 			<child link="${prefix}_hip_link"/>
 			<origin xyz="${reflectx*(0.0398)} ${0.0444 + (0.254/2) + -reflecty*(0.254/2)} -0.0315" />
+			<limit lower="${-pi}" upper="${pi}" effort="10" velocity="1.0"/>
 	  	</joint>
 
 		<!-- Femur -->
@@ -74,12 +127,29 @@
 			    <xacro:default_geometry cad_file="asb-09-black"/>
 			    <origin xyz="0 0.0287 0" rpy="${reflectx*(pi)} 0 0"/>
 			</visual>
+
+			<collision>
+			    <xacro:default_geometry cad_file="asb-09-black"/>
+			    <origin xyz="0 0.0287 0" rpy="0 0 0"/>
+			</collision>
+			<collision>
+			    <xacro:default_geometry cad_file="asb-09-black"/>
+			    <origin xyz="0 0.0287 0" rpy="${reflectx*(pi)} 0 0"/>
+			</collision>
+
+		    <inertial>
+		      <origin xyz="0 0 0"/>
+		      <mass value="1.0"/>
+		      <inertia  ixx="0.001" ixy="0.0"  ixz="0.0"  iyy="0.001"  iyz="0.0"  izz="0.001"/>
+		    </inertial>
+
 		</link>
 
-	  	<joint name="${prefix}_hip_to_${prefix}_femur" type="fixed">
+	  	<joint name="${prefix}_hip_lateral_joint" type="revolute">
 			<parent link="${prefix}_hip_link"/>
 			<child link="${prefix}_femur_link"/>
 			<origin xyz="${reflectx*(0.0192)} 0.0005 -0.0290" rpy="-${pi/2} 0 0"/>
+			<limit lower="${-pi}" upper="${pi}" effort="10" velocity="1.0"/>
 	  	</joint>
 
 		<!-- Tibia -->
@@ -96,12 +166,33 @@
 		        <xacro:default_geometry cad_file="hs-645-mg"/>
 		        <origin xyz="0.0 0 -0.067" rpy="-${pi/2} 0 ${reflectx*(-(pi/2))}"/>
 			</visual>
+
+			<collision>
+			    <xacro:default_geometry cad_file="asb-15-black"/>
+			    <origin xyz="${reflectx*(-0.0043)} -0.01422 -0.0386" rpy="0 ${reflectx*(-(pi/2))} 0 "/>
+			</collision>
+		 	<collision>
+		        <xacro:default_geometry cad_file="hs-645-mg"/>
+		        <origin xyz="0.0 0 -0.01" rpy="${pi/2} 0 ${reflectx*(pi/2)}"/>
+			</collision>
+		 	<collision>
+		        <xacro:default_geometry cad_file="hs-645-mg"/>
+		        <origin xyz="0.0 0 -0.067" rpy="-${pi/2} 0 ${reflectx*(-(pi/2))}"/>
+			</collision>
+		
+		    <inertial>
+		      <origin xyz="0 0 0"/>
+		      <mass value="1.0"/>
+		      <inertia  ixx="0.001" ixy="0.0"  ixz="0.0"  iyy="0.001"  iyz="0.0"  izz="0.001"/>
+		    </inertial>
+
 		</link>
 
-	  	<joint name="${prefix}_femur_to_${prefix}_tibia" type="fixed">
+	  	<joint name="${prefix}_knee_joint" type="revolute">
 			<parent link="${prefix}_femur_link"/>
 			<child link="${prefix}_tibia_link"/>
 			<origin xyz="${reflectx*(-0.019)} 0.0572 0" rpy="${pi/2} 0 0"/>
+			<limit lower="${-pi}" upper="${pi}" effort="10" velocity="1.0"/>
 	  	</joint>
 
 		<!-- Foot -->
@@ -110,12 +201,25 @@
 				<xacro:default_geometry cad_file="asb-11"/>
 				<origin xyz="0 0.0185 -0.0272" rpy="${pi/2} 0 ${pi}" />
 			</visual>
+
+			<collision>
+				<xacro:default_geometry cad_file="asb-11"/>
+				<origin xyz="0 0.0185 -0.0272" rpy="${pi/2} 0 ${pi}" />
+			</collision>
+		
+		    <inertial>
+		      <origin xyz="0 0 0"/>
+		      <mass value="1.0"/>
+		      <inertia  ixx="0.001" ixy="0.0"  ixz="0.0"  iyy="0.001"  iyz="0.0"  izz="0.001"/>
+		    </inertial>
+
 		</link>
 
-		<joint name="${prefix}_tibia_to_${prefix}_foot" type="fixed">
+		<joint name="${prefix}_ankle_joint" type="revolute">
 			<parent link="${prefix}_tibia_link"/>
 			<child link="${prefix}_foot_link"/>
 			<origin xyz="${reflectx*(0.0185)} ${reflecty*(-0.0002)} -0.077" rpy="0 0 0"/>
+			<limit lower="${-pi}" upper="${pi}" effort="10" velocity="1.0"/>
 	  	</joint>
 
 	</xacro:macro>

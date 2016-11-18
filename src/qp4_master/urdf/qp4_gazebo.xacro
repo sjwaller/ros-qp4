@@ -9,78 +9,6 @@
         </plugin>
     </gazebo>
 
-    <xacro:macro name="shoulder_swing_joint_gazebo" params="prefix">
-        <transmission name="${prefix}_shoulder_swing_joint_tran">
-            <type>transmission_interface/SimpleTransmission</type>
-            <joint name="${prefix}_shoulder_swing_joint">
-                <hardwareInterface>EffortJointInterface</hardwareInterface>
-            </joint>
-            <actuator name="${prefix}_shoulder_swing_joint_motor">
-                <hardwareInterface>EffortJointInterface</hardwareInterface>
-                <mechanicalReduction>1</mechanicalReduction>
-            </actuator>
-        </transmission>
-    </xacro:macro>
-    <xacro:macro name="shoulder_lateral_joint_gazebo" params="prefix">
-        <transmission name="${prefix}_shoulder_lateral_joint_tran">
-            <type>transmission_interface/SimpleTransmission</type>
-            <joint name="${prefix}_shoulder_lateral_joint">
-                <hardwareInterface>EffortJointInterface</hardwareInterface>
-            </joint>
-            <actuator name="${prefix}_shoulder_lateral_joint_motor">
-                <hardwareInterface>EffortJointInterface</hardwareInterface>
-                <mechanicalReduction>1</mechanicalReduction>
-            </actuator>
-        </transmission>
-    </xacro:macro>
-    <xacro:macro name="elbow_joint_gazebo" params="prefix">
-        <transmission name="${prefix}_elbow_joint_tran">
-            <type>transmission_interface/SimpleTransmission</type>
-            <joint name="${prefix}_elbow_joint">
-                <hardwareInterface>EffortJointInterface</hardwareInterface>
-            </joint>
-            <actuator name="${prefix}_elbow_joint_motor">
-                <hardwareInterface>EffortJointInterface</hardwareInterface>
-                <mechanicalReduction>1</mechanicalReduction>
-            </actuator>
-        </transmission>
-    </xacro:macro>
-    <xacro:macro name="hand_joint_gazebo" params="prefix">
-        <transmission name="${prefix}_elbow_joint_tran">
-            <type>transmission_interface/SimpleTransmission</type>
-            <joint name="${prefix}_elbow_joint">
-                <hardwareInterface>EffortJointInterface</hardwareInterface>
-            </joint>
-            <actuator name="${prefix}_elbow_joint_motor">
-                <hardwareInterface>EffortJointInterface</hardwareInterface>
-                <mechanicalReduction>1</mechanicalReduction>
-            </actuator>
-        </transmission>
-    </xacro:macro>
-    <xacro:macro name="hip_twist_joint_gazebo" params="prefix">
-        <transmission name="${prefix}_hip_twist_joint_tran">
-            <type>transmission_interface/SimpleTransmission</type>
-            <joint name="${prefix}_hip_twist_joint">
-                <hardwareInterface>EffortJointInterface</hardwareInterface>
-            </joint>
-            <actuator name="${prefix}_hip_twist_joint_motor">
-                <hardwareInterface>EffortJointInterface</hardwareInterface>
-                <mechanicalReduction>1</mechanicalReduction>
-            </actuator>
-        </transmission>
-    </xacro:macro>
-    <xacro:macro name="hip_lateral_joint_gazebo" params="prefix">
-        <transmission name="${prefix}_hip_lateral_joint_tran">
-            <type>transmission_interface/SimpleTransmission</type>
-            <joint name="${prefix}_hip_lateral_joint">
-                <hardwareInterface>EffortJointInterface</hardwareInterface>
-            </joint>
-            <actuator name="${prefix}_hip_lateral_joint_motor">
-                <hardwareInterface>EffortJointInterface</hardwareInterface>
-                <mechanicalReduction>1</mechanicalReduction>
-            </actuator>
-        </transmission>
-    </xacro:macro>
     <xacro:macro name="hip_swing_joint_gazebo" params="prefix">
         <transmission name="${prefix}_hip_swing_joint_tran">
             <type>transmission_interface/SimpleTransmission</type>
@@ -93,6 +21,20 @@
             </actuator>
         </transmission>
     </xacro:macro>
+
+    <xacro:macro name="hip_lateral_joint_gazebo" params="prefix">
+        <transmission name="${prefix}_hip_lateral_joint_tran">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${prefix}_hip_lateral_joint">
+                <hardwareInterface>EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${prefix}_hip_lateral_joint_motor">
+                <hardwareInterface>EffortJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+    </xacro:macro>
+
     <xacro:macro name="knee_joint_gazebo" params="prefix">
         <transmission name="${prefix}_knee_joint_tran">
             <type>transmission_interface/SimpleTransmission</type>
@@ -105,64 +47,35 @@
             </actuator>
         </transmission>
     </xacro:macro>
-    <xacro:macro name="ankle_swing_joint_gazebo" params="prefix">
-        <transmission name="${prefix}_ankle_swing_joint_tran">
+
+    <xacro:macro name="ankle_joint_gazebo" params="prefix">
+        <transmission name="${prefix}_ankle_joint_tran">
             <type>transmission_interface/SimpleTransmission</type>
-            <joint name="${prefix}_ankle_swing_joint">
+            <joint name="${prefix}_ankle_joint">
                 <hardwareInterface>EffortJointInterface</hardwareInterface>
             </joint>
-            <actuator name="${prefix}_ankle_swing_joint_motor">
-                <hardwareInterface>EffortJointInterface</hardwareInterface>
-                <mechanicalReduction>1</mechanicalReduction>
-            </actuator>
-        </transmission>
-    </xacro:macro>
-    <xacro:macro name="ankle_lateral_joint_gazebo" params="prefix">
-        <transmission name="${prefix}_ankle_lateral_joint_tran">
-            <type>transmission_interface/SimpleTransmission</type>
-            <joint name="${prefix}_ankle_lateral_joint">
-                <hardwareInterface>EffortJointInterface</hardwareInterface>
-            </joint>
-            <actuator name="${prefix}_ankle_lateral_joint_motor">
-                <hardwareInterface>EffortJointInterface</hardwareInterface>
-                <mechanicalReduction>1</mechanicalReduction>
-            </actuator>
-        </transmission>
-    </xacro:macro>
-    <xacro:macro name="foot_joint_gazebo" params="prefix">
-        <transmission name="${prefix}_ankle_lateral_joint_tran">
-            <type>transmission_interface/SimpleTransmission</type>
-            <joint name="${prefix}_ankle_lateral_joint">
-                <hardwareInterface>EffortJointInterface</hardwareInterface>
-            </joint>
-            <actuator name="${prefix}_ankle_lateral_joint_motor">
+            <actuator name="${prefix}_ankle_joint_motor">
                 <hardwareInterface>EffortJointInterface</hardwareInterface>
                 <mechanicalReduction>1</mechanicalReduction>
             </actuator>
         </transmission>
     </xacro:macro>
 
-    <shoulder_swing_joint_gazebo prefix="right"/>
-    <shoulder_swing_joint_gazebo prefix="left"/>
-    <shoulder_lateral_joint_gazebo prefix="right"/>
-    <shoulder_lateral_joint_gazebo prefix="left"/>
-    <elbow_joint_gazebo prefix="right"/>
-    <elbow_joint_gazebo prefix="left"/>
-    <hand_joint_gazebo prefix="right"/>
-    <hand_joint_gazebo prefix="left"/>
-    <hip_twist_joint_gazebo prefix="right"/>
-    <hip_twist_joint_gazebo prefix="left"/>
-    <hip_lateral_joint_gazebo prefix="right"/>
-    <hip_lateral_joint_gazebo prefix="left"/>
-    <hip_swing_joint_gazebo prefix="right"/>
-    <hip_swing_joint_gazebo prefix="left"/>
-    <knee_joint_gazebo prefix="right"/>
-    <knee_joint_gazebo prefix="left"/>
-    <ankle_swing_joint_gazebo prefix="right"/>
-    <ankle_swing_joint_gazebo prefix="left"/>
-    <ankle_lateral_joint_gazebo prefix="right"/>
-    <ankle_lateral_joint_gazebo prefix="left"/>
-    <foot_joint_gazebo prefix="right"/>
-    <foot_joint_gazebo prefix="left"/>
-
+    <hip_swing_joint_gazebo prefix="back_right"/>
+    <hip_swing_joint_gazebo prefix="back_left"/>
+    <hip_swing_joint_gazebo prefix="front_right"/>
+    <hip_swing_joint_gazebo prefix="front_left"/>
+    <hip_lateral_joint_gazebo prefix="back_right"/>
+    <hip_lateral_joint_gazebo prefix="back_left"/>
+    <hip_lateral_joint_gazebo prefix="front_right"/>
+    <hip_lateral_joint_gazebo prefix="front_left"/>
+    <knee_joint_gazebo prefix="back_right"/>
+    <knee_joint_gazebo prefix="back_left"/>
+    <knee_joint_gazebo prefix="front_right"/>
+    <knee_joint_gazebo prefix="front_left"/>
+    <ankle_joint_gazebo prefix="back_right"/>
+    <ankle_joint_gazebo prefix="back_left"/>
+    <ankle_joint_gazebo prefix="front_right"/>
+    <ankle_joint_gazebo prefix="front_left"/>
+    
 </robot>
