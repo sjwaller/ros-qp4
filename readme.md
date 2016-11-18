@@ -1,6 +1,8 @@
 #QP4 Robot
 
-This is a Ros project for my QP4 robot.
+This is a ROS Kinetic project for my QP4 robot.
+
+<img src="/assets/images/rviz_screenshot_2016_11_17-18_08_41.png" alt="alt text" width="50%" >
 
 #Using ROS Kinetic
 
@@ -39,6 +41,5 @@ Build urdf
 
 * http://wiki.ros.org/urdf/Tutorials
 * http://gazebosim.org/tutorials?tut=ros_urdf
-
 * http://www.lynxmotion.com/s-5-ses-3d-models.aspx
 
