@@ -1,3 +1,7 @@
+#QP4 Robot
+
+This is a Ros project for my QP4 robot.
+
 #Using ROS Kinetic
 
 __Load robot description and start state publishers__
