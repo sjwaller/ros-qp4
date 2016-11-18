@@ -1,9 +1,5 @@
 #Using ROS Kinetic
 
-roscd qp4_master
-
-./urdf/generate_urdf_and_vis.sh
-
 __Load robot description and start state publishers__
 ~~~~
 roslaunch qp4_master qp4_pubs.launch
@@ -26,6 +22,13 @@ __Start Gazebo with empty world__
 Loads qp4.world from qp4_master/worlds folder
 ~~~~
 roslaunch qp4_master qp4_gazebo.launch
+~~~~
+
+__Scripts__
+
+Build urdf
+~~~~
+./urdf/generate_urdf_and_vis.sh
 ~~~~
 
 #Links
