@@ -1,8 +1,0 @@
-prefix=/home/stewart/Robotics/ros-qp4/install
-
-Name: qp4_master
-Description: Description of qp4_master
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/stewart/Robotics/ros-qp4/install/lib 
-Requires: 

@@ -1,2 +1,0 @@
-qp4_master
--DCATKIN_DEVEL_PREFIX=/home/stewart/Robotics/ros-qp4/devel -DCMAKE_INSTALL_PREFIX=/home/stewart/Robotics/ros-qp4/install -G Unix Makefiles
