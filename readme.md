@@ -8,26 +8,27 @@ This is a ROS Kinetic project for my QP4 robot.
 
 __Load robot description and start state publishers__
 ~~~~
-roslaunch qp4_master qp4_pubs.launch
+roslaunch qp4_description qp4_pubs.launch
 ~~~~
 
 __Visualise robot using URDF__
 
 Display gui for joint position sliders (joint_state_publisher)
 ~~~~
-roslaunch qp4_master qp4_pubs.launch gui:=true
+roslaunch qp4_description qp4_pubs.launch gui:=true
 ~~~~
 
 Start RViz
 ~~~~
-roslaunch qp4_master qp4_rviz.launch model:=urdf/qp4.urdf
+roscd qp4_description
+roslaunch qp4_description qp4_rviz.launch model:=urdf/qp4.urdf
 ~~~~
 
 __Start Gazebo with empty world__
 
-Loads qp4.world from qp4_master/worlds folder
+Loads qp4.world from qp4_description/worlds folder
 ~~~~
-roslaunch qp4_master qp4_gazebo.launch
+roslaunch qp4_description qp4_gazebo.launch
 ~~~~
 
 __Scripts__
