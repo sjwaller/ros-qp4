@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: qp4_description
+    relative_path: urdf/qp4.urdf
+  SRDF:
+    relative_path: config/qp4.srdf
+  CONFIG:
+    author_name: Stewart Waller
+    author_email: sjwaller@gmail.com
+    generated_timestamp: 1479586962

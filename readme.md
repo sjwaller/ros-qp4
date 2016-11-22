@@ -9,28 +9,67 @@ This is a ROS Kinetic project for my QP4 robot.
 
 __Load robot description and start state publishers__
 ~~~~
-roslaunch qp4_description qp4_pubs.launch
+roslaunch qp4_launch qp4_pubs.launch
 ~~~~
 
 __Visualise robot using URDF__
 
 Display gui for joint position sliders (joint_state_publisher)
 ~~~~
-roslaunch qp4_description qp4_pubs.launch gui:=true
+roslaunch qp4_launch qp4_pubs.launch gui:=true
 ~~~~
 
 Start RViz
 ~~~~
-roscd qp4_description
-roslaunch qp4_description qp4_rviz.launch model:=urdf/qp4.urdf
+roslaunch qp4_launch qp4_rviz.launch
 ~~~~
 
 __Start Gazebo with empty world__
 
 Loads qp4.world from qp4_description/worlds folder
 ~~~~
-roslaunch qp4_description qp4_gazebo.launch
+roslaunch qp4_launch qp4_gazebo.launch
 ~~~~
+
+__MoveIt!__
+
+Start MoveIt setup assistant
+~~~~
+roslaunch moveit_setup_assistant setup_assistant.launch
+~~~~
+
+Start MoveIt demo in RViz
+~~~~
+roslaunch qp4_moveit demo.launch
+~~~~
+
+
+# Configure the MoveIt SRDF
+roslaunch qp4_moveit setup_assistant.launch                          # Start MoveIt Setup Assistant
+
+# Run the MoveIt RViz plugin
+roslaunch qp4_moveit demo.launch                                     # Start RViz with MoveIt MotionPlanning plugin
+
+# Run the MoveIt RViz plugin with default database
+roslaunch qp4_moveit demo.launch db:=true                            # Start RViz with MoveIt MotionPlanning plugin and default database
+
+# Run the MoveIt RViz plugin with custom database (old way)
+roslaunch qp4_moveit warehouse.launch moveit_warehouse_database_path:=~/qp4_warehouse_mongo_db
+roslaunch qp4_moveit demo.launch
+
+# Run the MoveIt RViz plugin with custom database
+roslaunch qp4_moveit demo.launch db:=true db_path:=~/qp4_warehouse_mongo_db
+
+# Run bioloid_pubs and the MoveIt RViz plugin with custom database
+roslaunch qp4_description qp4_pubs.launch dummy_imu:=true gui:=true
+roslaunch qp4_moveit demo_custom.launch db:=true db_path:=~/qp4_warehouse_mongo_db load_robot_description:=false    # Load URDF robot_description from a separate launch file (using xacro.py)
+
+# Test MoveIt Move Group API
+rosrun qp4_moveit moveit_api_test                                           # Run test program: MoveIt Move Group Interface/C++ API
+
+
+
+
 
 __Scripts__
 

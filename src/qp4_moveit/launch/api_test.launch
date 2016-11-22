@@ -1,0 +1,8 @@
+<launch>
+
+
+
+  <include file="$(find qp4_moveit)/launch/demo.launch"/>
+
+  <node name="moveit_api_test" pkg="qp4_master" type="moveit_api_test" respawn="false" output="screen"></node>
+</launch>

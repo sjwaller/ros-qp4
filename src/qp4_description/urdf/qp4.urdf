@@ -258,21 +258,21 @@
 		-->
     <collision>
       <geometry>
-        <box size="0.1016 0.3048 0.0254"/>
+        <box size="0.028 0.3 0.0254"/>
       </geometry>
       <origin xyz="0 0 -0.0127"/>
     </collision>
     <collision>
       <geometry>
-        <box size="0.0508 0.3048 0.0254"/>
+        <box size="0.08 0.06 0.0254"/>
       </geometry>
-      <origin xyz="-0.0508 0 -0.0254"/>
+      <origin xyz="0 -0.123 -0.0127"/>
     </collision>
     <collision>
       <geometry>
-        <box size="0.0508 0.3048 0.0254"/>
+        <box size="0.08 0.06 0.0254"/>
       </geometry>
-      <origin xyz="0.0508 0 -0.0254"/>
+      <origin xyz="0 0.123 -0.0127"/>
     </collision>
     <inertial>
       <origin xyz="0 0 0"/>
