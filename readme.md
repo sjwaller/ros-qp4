@@ -60,7 +60,7 @@ roslaunch qp4_moveit demo.launch
 # Run the MoveIt RViz plugin with custom database
 roslaunch qp4_moveit demo.launch db:=true db_path:=~/qp4_warehouse_mongo_db
 
-# Run bioloid_pubs and the MoveIt RViz plugin with custom database
+# Run qp4_pubs and the MoveIt RViz plugin with custom database
 roslaunch qp4_description qp4_pubs.launch dummy_imu:=true gui:=true
 roslaunch qp4_moveit demo_custom.launch db:=true db_path:=~/qp4_warehouse_mongo_db load_robot_description:=false    # Load URDF robot_description from a separate launch file (using xacro.py)
 
