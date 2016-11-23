@@ -11,8 +11,11 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## Generate messages in the 'msg' folder
 add_message_files(
-   FILES
-   Input.msg
+	FILES
+	Input.msg
+	BodyState.msg
+	BodyCommand.msg
+	GaitCommand.msg
  )
 
 ## Generate services in the 'srv' folder
