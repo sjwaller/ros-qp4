@@ -19,6 +19,19 @@ Run the Teleop node for PS3 Controller input - see links for running ps3joy as d
 roslaunch qp4_launch qp4_teleop.launch 
 ~~~~
 
+__Speech__
+
+Run the Speech nodes
+~~~~
+roslaunch qp4_launch qp4_speech.launch
+~~~~
+
+Command line message for say
+~~~~
+rostopic pub /say std_msgs/String hello
+~~~~
+
+
 __Visualise robot using URDF__
 
 Display gui for joint position sliders (joint_state_publisher)
