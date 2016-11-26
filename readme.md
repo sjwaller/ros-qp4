@@ -28,7 +28,7 @@ roslaunch qp4_launch qp4_speech.launch
 
 Command line message for say
 ~~~~
-rostopic pub /say std_msgs/String hello
+rostopic pub /say std_msgs/String 'Once upon a time there was a mechanical dog. His name was QP4.' -1
 ~~~~
 
 
