@@ -1,7 +1,11 @@
 #include "qp4_say.hpp"
 
 Qp4Say::Qp4Say(){
-	sub = node.subscribe("say", 1000, &Qp4Say::chatterCallback, this);
+	sub 	= node.subscribe("say", 1000, &Qp4Say::chatterCallback, this);
+	cmd 	= node.subscribe("command", 1000, &Qp4Say::chatterCallback, this);
+	mode 	= node.subscribe("mode", 1000, &Qp4Say::chatterCallback, this);
+	qry 	= node.subscribe("query", 1000, &Qp4Say::chatterCallback, this);
+	
 	pub = node.advertise<sound_play::SoundRequest>("robotsound", 1000);  
 	sleep(1);
 	verbalize("QP 4 Speech engine ready ...",1);  
@@ -17,6 +21,7 @@ void Qp4Say::verbalize(const std::string sentence, unsigned int time)
 	m.sound = sound_play::SoundRequest::SAY;
 	m.command = sound_play::SoundRequest::PLAY_ONCE;
 	m.arg = sentence;
+	m.arg2 = "voice_don_diphone";
 	m.volume = 1;
 	pub.publish(m);
 }

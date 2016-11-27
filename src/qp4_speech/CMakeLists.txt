@@ -8,6 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   sound_play
   std_msgs
+  qp4_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -143,6 +144,10 @@ include_directories(
 ## Declare a cpp executable
 add_executable(qp4_say src/qp4_say.cpp)
 target_link_libraries(qp4_say ${catkin_LIBRARIES})
+
+add_executable(qp4_listen src/qp4_listen.cpp)
+target_link_libraries(qp4_listen ${catkin_LIBRARIES})
+add_dependencies(qp4_listen qp4_msgs_generate_messages_cpp)
 
 #############
 ## Install ##

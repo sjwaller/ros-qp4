@@ -16,6 +16,9 @@ class Qp4Say {
 	private:
 		ros::NodeHandle node;
 		ros::Subscriber sub;
+		ros::Subscriber cmd;
+		ros::Subscriber mode;
+		ros::Subscriber qry;
 		ros::Publisher pub;
 
 		void verbalize(const std::string sentence, unsigned int time);

@@ -16,6 +16,9 @@ add_message_files(
 	BodyState.msg
 	BodyCommand.msg
 	GaitCommand.msg
+	RobotCommand.msg
+	ModeCommand.msg
+	QuestionCommand.msg
  )
 
 ## Generate services in the 'srv' folder

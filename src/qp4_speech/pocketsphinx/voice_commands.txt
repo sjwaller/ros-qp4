@@ -1,0 +1,32 @@
+start listening
+stop listening
+goto sleep
+wake up
+move forward
+move backward
+move left
+move right
+turn left
+turn right
+move faster
+speed up
+move slower
+slow down
+quarter speed
+half speed
+full speed
+cancel
+stop
+abort
+panic
+help
+turn off
+shut down
+autonomous mode
+demo mode
+what is your name
+what are your specs
+how old are you
+what time is it
+
+

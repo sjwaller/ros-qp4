@@ -9,7 +9,7 @@ find_package(catkin REQUIRED COMPONENTS
   joy
   roscpp
   std_msgs
-	qp4_msgs
+  qp4_msgs
 )
 
 ## System dependencies are found with CMake's conventions
