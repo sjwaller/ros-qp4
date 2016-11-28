@@ -2,7 +2,7 @@
 
 This is a ROS Kinetic project for my QP4 robot.
 
-<img src="/assets/images/rviz_screenshot_2016_11_17-18_08_41.png" alt="alt text" width="49%" >
+<img src="/assets/images/rviz_screenshot.png" alt="alt text" width="49%" >
 <img src="/assets/images/urdf.png" alt="alt text" width="49%" >
 
 #Using ROS Kinetic
