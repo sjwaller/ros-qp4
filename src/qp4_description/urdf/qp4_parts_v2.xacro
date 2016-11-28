@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<!-- QP4 parts -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+	 <!--
+		0.003175 = 0.125"
+		0.00635 = 0.25"
+		0.0127 = 0.5"
+		0.0254 = 1"
+		0.1524 = 6
+		0.254  = 10
+		0.2794 = 11"
+		0.3048 = 12" 
+	-->	
+ 	
+	<xacro:property name="eighth_inch" value="0.003175"/>
+    <xacro:property name="quarter_inch" value="0.00635"/>
+    <xacro:property name="half_inch" value="0.0127"/>
+    <xacro:property name="inch" value="0.0254"/>
+   
+	<xacro:property name="body_length" value="${12*inch}"/>
+    <xacro:property name="body_width" value="${3*inch}"/>
+    
+    <!-- Torso -->
+
+    <link name="torso_link">
+		<visual>
+            <xacro:default_geometry cad_file="asb-512-black"/>
+            <origin xyz="-${body_width/2} -${body_length/2} 0" rpy="${pi/2} -${pi/2} 0"/>
+		</visual>   	
+		<visual>
+            <xacro:default_geometry cad_file="asb-512-black"/>
+            <origin xyz="${body_width/2} -${body_length/2} 0" rpy="${pi/2} ${pi/2} 0"/>
+		</visual>
+		<visual>
+        	<xacro:default_geometry cad_file="asb-04"/>
+			<origin xyz="${(body_width/2) - half_inch} ${-((body_length/2)-inch)} ${-half_inch}" rpy="${-pi/2} 0 ${pi/2}"/>
+		</visual>
+		<visual>
+	        <xacro:default_geometry cad_file="hs-645-mg"/>
+	        <origin xyz="${(body_width/2) - inch} ${-((body_length/2)-inch)} ${-inch}" rpy="0 ${pi/2} 0"/>
+		</visual>
+		<visual>
+        	<xacro:default_geometry cad_file="asb-04"/>
+			<origin xyz="${(body_width/2) - half_inch} ${(body_length/2)-inch} ${-half_inch}" rpy="${-pi/2} 0 ${pi/2}"/>
+		</visual>
+		<visual>
+	        <xacro:default_geometry cad_file="hs-645-mg"/>
+	        <origin xyz="${(body_width/2) - inch} ${((body_length/2)-inch)} ${-inch}" rpy="0 ${-pi/2} ${pi}"/>
+		</visual>
+		<visual>
+        	<xacro:default_geometry cad_file="asb-04"/>
+			<origin xyz="${-((body_width/2) - half_inch)} ${-((body_length/2)-inch)} ${-half_inch}" rpy="${-pi/2} 0 ${-pi/2}"/>
+		</visual>
+		<visual>
+	        <xacro:default_geometry cad_file="hs-645-mg"/>
+	        <origin xyz="${-((body_width/2) - inch)} ${-((body_length/2)-inch)} ${-inch}" rpy="0 ${-pi/2} 0"/>
+		</visual>
+		<visual>
+        	<xacro:default_geometry cad_file="asb-04"/>
+			<origin xyz="${-((body_width/2) - half_inch)} ${(body_length/2)-inch} ${-half_inch}" rpy="${-pi/2} 0 ${-pi/2}"/>
+		</visual>
+		<visual>
+	        <xacro:default_geometry cad_file="hs-645-mg"/>
+	        <origin xyz="${-((body_width/2) - inch)} ${(body_length/2)-inch} ${-inch}" rpy="0 ${pi/2} ${pi}"/>
+		</visual>
+	    <visual>
+   			<geometry>
+				 <box size="${2*inch} ${6*inch} ${inch}"/>
+			</geometry>
+			<origin xyz="0 0 0"/>		
+   		</visual>
+	    <collision>
+   			<geometry>
+				 <box size="${body_width} ${body_length} ${inch}"/>
+   			</geometry>
+			<origin xyz="0 0 0"/>
+   		</collision>
+	   	<collision>
+   			<geometry>
+				 <box size="${body_width + inch} ${2*inch} ${inch}"/>
+   			</geometry>
+			<origin xyz="0 ${(body_length/2)-inch} ${-inch}"/>
+   		</collision>
+	   	<collision>
+   			<geometry>
+				 <box size="${body_width + inch} ${2*inch} ${inch}"/>
+   			</geometry>
+			<origin xyz="0 ${-((body_length/2)-inch)} ${-inch}"/>
+   		</collision>
+        <inertial>
+          <origin xyz="0 0 0"/>
+          <mass value="1.0"/>
+          <inertia  ixx="0.001" ixy="0.0"  ixz="0.0"  iyy="0.001"  iyz="0.0"  izz="0.001"/>
+        </inertial>
+	</link>
+
+	<!-- Legs -->
+
+	<xacro:macro name="leg" params="prefix reflect offset">
+
+		<!-- Hip -->
+		<link name="${prefix}_hip_link">
+			<visual>
+            	<xacro:default_geometry cad_file="asb-11"/>
+            	<origin xyz="0 0 0" rpy="0 ${pi} ${reflect*-(pi/2)}"/>
+			</visual>
+		   	<collision>
+	   			<geometry>
+					 <box size="${1.5*inch} ${2*inch} ${1.75*inch}"/>
+	   			</geometry>
+				<origin xyz="${reflect*(0.75*inch)} 0 ${half_inch}"/>
+	   		</collision>
+		    <inertial>
+		      <origin xyz="0 0 0"/>
+		      <mass value="1.0"/>
+		      <inertia  ixx="0.001" ixy="0.0"  ixz="0.0"  iyy="0.001"  iyz="0.0"  izz="0.001"/>
+		    </inertial>
+		</link>
+	  	<joint name="${prefix}_hip_lateral_joint" type="revolute">
+			<parent link="torso_link"/>
+			<child link="${prefix}_hip_link"/>
+			<origin xyz="${reflect * ((body_width/2) + (5*eighth_inch))} ${offset} ${-inch}" rpy="0 0 0"/>
+			<axis xyz="1 0 0" />
+			<limit lower="${-pi}" upper="${pi}" effort="10" velocity="1.0"/>
+	  	</joint>
+
+		<!-- Femur -->
+		<link name="${prefix}_femur_link">
+			<visual>
+            	<xacro:default_geometry cad_file="asb-04"/>
+				<origin xyz="${reflect*(-half_inch)} ${-quarter_inch} ${-(3*eighth_inch)}" rpy="0 ${reflect*(pi/2)} ${reflect*-(pi/2)}"/>
+			</visual>
+			<visual>
+		        <xacro:default_geometry cad_file="hs-645-mg"/>
+		        <origin xyz="0 ${-(6*eighth_inch)} ${-(3*eighth_inch)}" rpy="${pi/2} 0 ${pi}"/>
+			</visual>
+			<visual>
+            	<xacro:default_geometry cad_file="asb-06"/>
+            	<origin xyz="${reflect*-half_inch} 0 ${-(2*inch) + (3*eighth_inch)}" rpy="0 ${(pi/2)}  ${reflect*-(pi/2)}"/>
+			</visual>
+			<visual>
+            	<xacro:default_geometry cad_file="asb-10"/>
+            	<origin xyz="0 0 ${-(13*eighth_inch)}" rpy="${-pi/2} 0 0"/>
+			</visual>		
+		   	<collision>
+	   			<geometry>
+					 <box size="${2*inch} ${2*inch} ${38*eighth_inch}"/>
+	   			</geometry>
+				<origin xyz="0 0 ${-13*eighth_inch}"/>				
+	   		</collision>
+		    <inertial>
+		      <origin xyz="0 0 0"/>
+		      <mass value="1.0"/>
+		      <inertia  ixx="0.001" ixy="0.0"  ixz="0.0"  iyy="0.001"  iyz="0.0"  izz="0.001"/>
+		    </inertial>
+		</link>
+
+	  	<joint name="${prefix}_hip_swing_joint" type="revolute">
+			<parent link="${prefix}_hip_link"/>
+			<child link="${prefix}_femur_link"/>
+			<origin xyz="${reflect * inch} 0 ${half_inch + quarter_inch}" rpy="0 0 0"/>
+			<axis xyz="0 ${-reflect} 0" />	
+			<limit lower="${-pi}" upper="${pi}" effort="10" velocity="1.0"/>
+	  	</joint>
+
+		<!-- Tibia -->
+		<link name="${prefix}_tibia_link">
+			<visual>
+            	<xacro:default_geometry cad_file="asb-15"/>
+				<origin xyz="${reflect*-7*eighth_inch} ${-half_inch} ${-1.5*inch}" rpy="0 ${reflect*-(pi/2)} 0"/>
+			</visual>
+			<visual>
+		        <xacro:default_geometry cad_file="hs-645-mg"/>
+		        <origin xyz="${reflect*-(6*eighth_inch)} 0 ${-(3*eighth_inch)}" rpy="${pi/2} 0 ${reflect*(pi/2)}"/>
+			</visual>
+			<visual>
+		        <xacro:default_geometry cad_file="hs-645-mg"/>
+		        <origin xyz="${reflect*-(6*eighth_inch)} 0 ${-(21*eighth_inch)}" rpy="${pi/2} ${pi} ${reflect*(pi/2)}"/>
+			</visual>
+		   	<collision>
+	   			<geometry>
+					 <box size="${2*inch} ${1*inch} ${36*eighth_inch}"/>
+	   			</geometry>
+				<origin xyz="0 0 ${-12*eighth_inch}"/>				
+	   		</collision>
+		    <inertial>
+		      <origin xyz="0 0 0"/>
+		      <mass value="1.0"/>
+		      <inertia  ixx="0.001" ixy="0.0"  ixz="0.0"  iyy="0.001"  iyz="0.0"  izz="0.001"/>
+		    </inertial>
+		</link>
+
+	  	<joint name="${prefix}_knee_joint" type="revolute">
+			<parent link="${prefix}_femur_link"/>
+			<child link="${prefix}_tibia_link"/>
+			<origin xyz="0 0 ${-(4*inch) + half_inch }" rpy="0 0 0"/>
+			<axis xyz="1 0 0" />							
+			<limit lower="${-pi}" upper="${pi}" effort="10" velocity="1.0"/>
+	  	</joint>
+
+		<!-- Foot --> 
+		<link name="${prefix}_foot_link">		
+			<visual>
+				<xacro:default_geometry cad_file="asb-11"/>
+				<origin xyz="0 ${6*eighth_inch} -${9*eighth_inch}" rpy="${pi/2} 0 ${pi}" />
+			</visual>
+		   	<collision>
+	   			<geometry>
+					 <box size="${2*inch} ${1.75*inch} ${1.5*inch}"/>
+	   			</geometry>
+				<origin xyz="0 ${3*eighth_inch} ${-3*eighth_inch}"/>
+	   		</collision>
+		    <inertial>
+		      <origin xyz="0 0 0"/>
+		      <mass value="1.0"/>
+		      <inertia  ixx="0.001" ixy="0.0"  ixz="0.0"  iyy="0.001"  iyz="0.0"  izz="0.001"/>
+		    </inertial>
+		</link>
+		<joint name="${prefix}_ankle_joint" type="revolute">
+			<parent link="${prefix}_tibia_link"/>
+			<child link="${prefix}_foot_link"/>
+			<origin xyz="0 0 ${-3*inch}" rpy="0 0 0"/>
+			<limit lower="${-pi}" upper="${pi}" effort="10" velocity="1.0"/>
+	  	</joint>
+
+	</xacro:macro>
+
+	<xacro:leg prefix="back_right" reflect="1" offset="${-((body_length/2)-inch)}"/>
+	<xacro:leg prefix="back_left" reflect="-1" offset="${-((body_length/2)-inch)}"/>
+	<xacro:leg prefix="front_right" reflect="1" offset="${(body_length/2)-inch}"/>  	
+	<xacro:leg prefix="front_left" reflect="-1" offset="${(body_length/2)-inch}"/>
+
+</robot>

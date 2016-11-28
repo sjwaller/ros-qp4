@@ -21,36 +21,36 @@ node [shape=box];
 node [shape=ellipse, color=blue, fontcolor=blue];
 "base_link" -> "base_to_torso" [label="xyz: 0 0 0.22 \nrpy: 0 -0 0"]
 "base_to_torso" -> "torso_link"
-"torso_link" -> "back_left_hip_swing_joint" [label="xyz: -0.0395 -0.1095 -0.0315 \nrpy: 0 -0 0"]
-"back_left_hip_swing_joint" -> "back_left_hip_link"
-"back_left_hip_link" -> "back_left_hip_lateral_joint" [label="xyz: -0.0192 0.0005 -0.029 \nrpy: -1.5708 0 0"]
-"back_left_hip_lateral_joint" -> "back_left_femur_link"
-"back_left_femur_link" -> "back_left_knee_joint" [label="xyz: 0.019 0.0572 0 \nrpy: 1.5708 -0 0"]
+"torso_link" -> "back_left_hip_lateral_joint" [label="xyz: -0.053975 -0.127 -0.0254 \nrpy: 0 -0 0"]
+"back_left_hip_lateral_joint" -> "back_left_hip_link"
+"back_left_hip_link" -> "back_left_hip_swing_joint" [label="xyz: -0.0254 0 0.01905 \nrpy: 0 -0 0"]
+"back_left_hip_swing_joint" -> "back_left_femur_link"
+"back_left_femur_link" -> "back_left_knee_joint" [label="xyz: 0 0 -0.0889 \nrpy: 0 -0 0"]
 "back_left_knee_joint" -> "back_left_tibia_link"
-"back_left_tibia_link" -> "back_left_ankle_joint" [label="xyz: -0.0185 -0.0002 -0.077 \nrpy: 0 -0 0"]
+"back_left_tibia_link" -> "back_left_ankle_joint" [label="xyz: 0 0 -0.0762 \nrpy: 0 -0 0"]
 "back_left_ankle_joint" -> "back_left_foot_link"
-"torso_link" -> "back_right_hip_swing_joint" [label="xyz: 0.0395 -0.1095 -0.0315 \nrpy: 0 -0 0"]
-"back_right_hip_swing_joint" -> "back_right_hip_link"
-"back_right_hip_link" -> "back_right_hip_lateral_joint" [label="xyz: 0.0192 0.0005 -0.029 \nrpy: -1.5708 0 0"]
-"back_right_hip_lateral_joint" -> "back_right_femur_link"
-"back_right_femur_link" -> "back_right_knee_joint" [label="xyz: -0.019 0.0572 0 \nrpy: 1.5708 -0 0"]
+"torso_link" -> "back_right_hip_lateral_joint" [label="xyz: 0.053975 -0.127 -0.0254 \nrpy: 0 -0 0"]
+"back_right_hip_lateral_joint" -> "back_right_hip_link"
+"back_right_hip_link" -> "back_right_hip_swing_joint" [label="xyz: 0.0254 0 0.01905 \nrpy: 0 -0 0"]
+"back_right_hip_swing_joint" -> "back_right_femur_link"
+"back_right_femur_link" -> "back_right_knee_joint" [label="xyz: 0 0 -0.0889 \nrpy: 0 -0 0"]
 "back_right_knee_joint" -> "back_right_tibia_link"
-"back_right_tibia_link" -> "back_right_ankle_joint" [label="xyz: 0.0185 -0.0002 -0.077 \nrpy: 0 -0 0"]
+"back_right_tibia_link" -> "back_right_ankle_joint" [label="xyz: 0 0 -0.0762 \nrpy: 0 -0 0"]
 "back_right_ankle_joint" -> "back_right_foot_link"
-"torso_link" -> "front_left_hip_swing_joint" [label="xyz: -0.0395 0.1095 -0.0315 \nrpy: 0 -0 0"]
-"front_left_hip_swing_joint" -> "front_left_hip_link"
-"front_left_hip_link" -> "front_left_hip_lateral_joint" [label="xyz: -0.0192 0.0005 -0.029 \nrpy: -1.5708 0 0"]
-"front_left_hip_lateral_joint" -> "front_left_femur_link"
-"front_left_femur_link" -> "front_left_knee_joint" [label="xyz: 0.019 0.0572 0 \nrpy: 1.5708 -0 0"]
+"torso_link" -> "front_left_hip_lateral_joint" [label="xyz: -0.053975 0.127 -0.0254 \nrpy: 0 -0 0"]
+"front_left_hip_lateral_joint" -> "front_left_hip_link"
+"front_left_hip_link" -> "front_left_hip_swing_joint" [label="xyz: -0.0254 0 0.01905 \nrpy: 0 -0 0"]
+"front_left_hip_swing_joint" -> "front_left_femur_link"
+"front_left_femur_link" -> "front_left_knee_joint" [label="xyz: 0 0 -0.0889 \nrpy: 0 -0 0"]
 "front_left_knee_joint" -> "front_left_tibia_link"
-"front_left_tibia_link" -> "front_left_ankle_joint" [label="xyz: -0.0185 0.0002 -0.077 \nrpy: 0 -0 0"]
+"front_left_tibia_link" -> "front_left_ankle_joint" [label="xyz: 0 0 -0.0762 \nrpy: 0 -0 0"]
 "front_left_ankle_joint" -> "front_left_foot_link"
-"torso_link" -> "front_right_hip_swing_joint" [label="xyz: 0.0395 0.1095 -0.0315 \nrpy: 0 -0 0"]
-"front_right_hip_swing_joint" -> "front_right_hip_link"
-"front_right_hip_link" -> "front_right_hip_lateral_joint" [label="xyz: 0.0192 0.0005 -0.029 \nrpy: -1.5708 0 0"]
-"front_right_hip_lateral_joint" -> "front_right_femur_link"
-"front_right_femur_link" -> "front_right_knee_joint" [label="xyz: -0.019 0.0572 0 \nrpy: 1.5708 -0 0"]
+"torso_link" -> "front_right_hip_lateral_joint" [label="xyz: 0.053975 0.127 -0.0254 \nrpy: 0 -0 0"]
+"front_right_hip_lateral_joint" -> "front_right_hip_link"
+"front_right_hip_link" -> "front_right_hip_swing_joint" [label="xyz: 0.0254 0 0.01905 \nrpy: 0 -0 0"]
+"front_right_hip_swing_joint" -> "front_right_femur_link"
+"front_right_femur_link" -> "front_right_knee_joint" [label="xyz: 0 0 -0.0889 \nrpy: 0 -0 0"]
 "front_right_knee_joint" -> "front_right_tibia_link"
-"front_right_tibia_link" -> "front_right_ankle_joint" [label="xyz: 0.0185 0.0002 -0.077 \nrpy: 0 -0 0"]
+"front_right_tibia_link" -> "front_right_ankle_joint" [label="xyz: 0 0 -0.0762 \nrpy: 0 -0 0"]
 "front_right_ankle_joint" -> "front_right_foot_link"
 }

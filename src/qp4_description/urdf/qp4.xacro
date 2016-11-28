@@ -16,12 +16,16 @@
     <xacro:macro name="z_rot">
         <axis xyz="0 0 1"/>
     </xacro:macro>
-
-    <xacro:include filename="$(find qp4_description)/urdf/qp4_materials.xacro"/>
+ 	
+	<xacro:include filename="$(find qp4_description)/urdf/qp4_materials.xacro"/>
+   
+<!--
     <xacro:include filename="$(find qp4_description)/urdf/qp4_gazebo.xacro"/>
     <xacro:include filename="$(find qp4_description)/urdf/qp4_parts.xacro"/>
+-->
 
-	
+    <xacro:include filename="$(find qp4_description)/urdf/qp4_parts_v2.xacro"/>
+
 	<link name="base_link"></link>
 
  	<joint name="base_to_torso" type="fixed">
